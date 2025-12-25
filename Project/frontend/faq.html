@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions — SymptomCheck</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D9488',
+                        slate: { 800: '#1E293B', 900: '#0F172A' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-50">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg premium-navbar fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="#0D9488" />
+                    <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+                <span>SymptomCheck</span>
+            </a>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="health-news.html">Health News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="how-to-use.html">How to Use</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary px-4" href="chatbot.html">Launch AI Chat</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-24"></div>
+
+    <!-- HEADER -->
+    <header class="py-16 bg-white border-b border-slate-100">
+        <div class="container text-center">
+            <h1 class="section-title mb-4">Common Questions</h1>
+            <p class="section-subtext mx-auto">Get quick answers to common concerns about our AI guidance and data
+                safety.</p>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="py-20">
+        <div class="container max-w-3xl">
+            <div class="accordion accordion-flush bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm"
+                id="faqAccordion">
+
+                <!-- FAQ 1 -->
+                <div class="accordion-item border-0 border-b border-slate-100 last:border-0">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed py-5 px-8 font-bold text-slate-900 bg-white shadow-none focus:bg-teal-50/50"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Is this AI a replacement for a doctor?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body px-8 pb-8 pt-0 text-slate-600">
+                            No. SymptomCheck is an informational triage tool. It helps you understand your symptoms and
+                            suggests the appropriate level of care, but it cannot diagnose conditions or prescribe
+                            treatments. Always consult a medical professional for clinical diagnosis.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="accordion-item border-0 border-b border-slate-100 last:border-0">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed py-5 px-8 font-bold text-slate-900 bg-white shadow-none focus:bg-teal-50/50"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            How accurate are the AI's recommendations?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body px-8 pb-8 pt-0 text-slate-600">
+                            Our AI is powered by Google Gemini and trained on extensive medical reasoning patterns.
+                            While highly sophisticated at identifying common symptom clusters, its accuracy depends on
+                            the quality of information you provide. It is meant for initial guidance only.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="accordion-item border-0 border-b border-slate-100 last:border-0">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed py-5 px-8 font-bold text-slate-900 bg-white shadow-none focus:bg-teal-50/50"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Is my health data private and secure?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body px-8 pb-8 pt-0 text-slate-600">
+                            Yes. We prioritize your privacy. All chat data is encrypted during transmission and is not
+                            used for advertising. We follow industry best practices for data protection as outlined in
+                            our Privacy Policy.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="accordion-item border-0 border-b border-slate-100 last:border-0">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed py-5 px-8 font-bold text-slate-900 bg-white shadow-none focus:bg-teal-50/50"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            What should I do in an emergency?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body px-8 pb-8 pt-0 text-slate-600">
+                            If you are experiencing severe symptoms such as chest pain, difficulty breathing, or slurred
+                            speech, please bypass this tool and call emergency services immediately or go to the nearest
+                            emergency room.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-slate-500 mb-4">Still have questions?</p>
+                <a href="contact-support.html" class="text-primary font-bold hover:underline">Contact our support team
+                    &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-slate-900 mt-auto">
+        <div class="container text-center">
+            <p class="text-slate-400 mb-0">&copy; 2024 SymptomCheck. Your well-being is our priority.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

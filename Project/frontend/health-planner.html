@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Planner — SympCheck AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { primary: '#0D9488', slate: { 800: '#1E293B', 900: '#0F172A' } } } }
+        }
+    </script>
+</head>
+
+<body class="bg-clinical min-h-screen flex flex-col">
+    <!-- NAV -->
+    <nav class="app-nav">
+        <div class="nav-container">
+            <a href="index.html" class="flex items-center gap-2 no-underline text-primary font-bold text-lg">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="#0D9488" />
+                    <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+                <span>SympCheck</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link-item">Home</a>
+                <a href="services.html" class="nav-link-item">Services</a>
+                <a href="health-news.html" class="nav-link-item">News</a>
+                <a href="health-planner.html" class="nav-link-item active">Planner</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-24"></div>
+
+    <main class="section-clinical flex-1">
+        <div class="container-product max-w-4xl" id="plannerApp">
+            <!-- STEP 1: Goal -->
+            <div id="stepGoal" class="step-container">
+                <span class="clinical-tag">Step 1 of 4</span>
+                <h2 class="text-3xl mb-8">What is your primary health goal?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <button onclick="pick('goal', 'Fat Loss')"
+                        class="medical-card p-8 text-center hover:border-primary transition group">
+                        <div class="text-2xl mb-2">🔥</div>
+                        <div class="font-bold">Fat Loss</div>
+                        <p class="text-xs text-slate-500 mt-2">Optimized caloric deficit & metabolic conditioning</p>
+                    </button>
+                    <button onclick="pick('goal', 'Muscle Gain')"
+                        class="medical-card p-8 text-center hover:border-primary transition group">
+                        <div class="text-2xl mb-2">💪</div>
+                        <div class="font-bold">Muscle Gain</div>
+                        <p class="text-xs text-slate-500 mt-2">Hypertrophy training & protein-rich nutrition</p>
+                    </button>
+                    <button onclick="pick('goal', 'Vitality')"
+                        class="medical-card p-8 text-center hover:border-primary transition group">
+                        <div class="text-2xl mb-2">🌿</div>
+                        <div class="font-bold">Vitality</div>
+                        <p class="text-xs text-slate-500 mt-2">Longevity-focused mobility & balanced diet</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Metrics -->
+            <div id="stepMetrics" class="step-container hidden">
+                <span class="clinical-tag">Step 2 of 4</span>
+                <h2 class="text-3xl mb-8">Clinical Profile</h2>
+                <div class="flex flex-col gap-8">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Sex</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" onclick="setMetric('sex', 'Male')" class="chip">Male</button>
+                            <button type="button" onclick="setMetric('sex', 'Female')" class="chip">Female</button>
+                            <button type="button" onclick="setMetric('sex', 'Other')" class="chip">Other</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Age Range</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" onclick="setMetric('age', '18-25')" class="chip">18-25</button>
+                            <button type="button" onclick="setMetric('age', '26-40')" class="chip">26-40</button>
+                            <button type="button" onclick="setMetric('age', '41-60')" class="chip">41-60</button>
+                            <button type="button" onclick="setMetric('age', '60+')" class="chip">60+</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Height Range</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" onclick="setMetric('height', '150-160cm')"
+                                class="chip">150-160cm</button>
+                            <button type="button" onclick="setMetric('height', '161-170cm')"
+                                class="chip">161-170cm</button>
+                            <button type="button" onclick="setMetric('height', '171-180cm')"
+                                class="chip">171-180cm</button>
+                            <button type="button" onclick="setMetric('height', '180cm+')" class="chip">180cm+</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Weight Range</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" onclick="setMetric('weight', '50-60kg')" class="chip">50-60kg</button>
+                            <button type="button" onclick="setMetric('weight', '61-75kg')" class="chip">61-75kg</button>
+                            <button type="button" onclick="setMetric('weight', '76-90kg')" class="chip">76-90kg</button>
+                            <button type="button" onclick="setMetric('weight', '90kg+')" class="chip">90kg+</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Activity Level</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" onclick="setMetric('activity', 'Sedentary')"
+                                class="chip">Sedentary</button>
+                            <button type="button" onclick="setMetric('activity', 'Moderate')"
+                                class="chip">Moderate</button>
+                            <button type="button" onclick="setMetric('activity', 'Very Active')" class="chip">Very
+                                Active</button>
+                        </div>
+                    </div>
+                    <button type="button" onclick="next('stepMetrics', 'stepDiet')"
+                        class="product-btn btn-primary-product w-full mt-4">Next Step</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Diet -->
+            <div id="stepDiet" class="step-container hidden">
+                <span class="clinical-tag">Step 3 of 4</span>
+                <h2 class="text-3xl mb-8">Dietary Preference</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <button type="button" onclick="pick('diet', 'Balanced')" class="chip-large">Balanced</button>
+                    <button type="button" onclick="pick('diet', 'Vegan')" class="chip-large">Vegan</button>
+                    <button type="button" onclick="pick('diet', 'Ketogenic')" class="chip-large">Ketogenic</button>
+                    <button type="button" onclick="pick('diet', 'High Protein')" class="chip-large">High
+                        Protein</button>
+                </div>
+            </div>
+
+            <!-- STEP 4: Generating -->
+            <div id="stepGenerating" class="step-container hidden text-center py-20">
+                <div id="genLoader"
+                    class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-6">
+                </div>
+                <div id="genError" class="hidden text-rose-500 mb-6 font-bold">Backend Connection Failed</div>
+                <h2 id="genText" class="text-2xl text-slate-900">AI Health Matrix Generating...</h2>
+                <p id="genSubText" class="text-slate-500">Our clinical algorithm is structuring your personalized plan.
+                </p>
+                <button id="retryBtn" onclick="generatePlan()"
+                    class="hidden product-btn btn-primary-product mt-6 mx-auto">Retry Connection</button>
+                <div id="backToStart" class="hidden mt-4 text-xs text-slate-400 cursor-pointer underline"
+                    onclick="location.reload()">Back to Step 1</div>
+            </div>
+
+            <!-- RESULT VIEW -->
+            <div id="stepResult" class="step-container hidden">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-3xl">Your Personalized Matrix</h2>
+                    <button type="button" onclick="window.print()"
+                        class="text-xs font-bold text-primary underline">Print
+                        Plan</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="medical-card bg-teal-50/50 p-6 border-teal-100">
+                        <h3 class="font-bold text-teal-800 mb-4 flex items-center gap-2">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2v20M2 12h20" />
+                            </svg>
+                            Nutritional Strategy
+                        </h3>
+                        <p id="nutriStrategy" class="text-sm text-slate-600 mb-4"></p>
+                        <ul id="nutriFoods" class="space-y-2"></ul>
+                    </div>
+                    <div class="medical-card p-6">
+                        <h3 class="font-bold text-slate-800 mb-4">Workout Matrix</h3>
+                        <div id="workoutList" class="space-y-4"></div>
+                    </div>
+                </div>
+                <div class="mt-8 p-4 bg-slate-50 rounded-xl text-[10px] text-slate-400">
+                    <strong class="text-slate-600 uppercase tracking-widest">Clinical Disclaimer:</strong>
+                    This plan is AI-generated and not a replacement for professional medical advice. Consult your
+                    physician before starting any new exercise or diet regimen.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .step-container {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chip {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .chip:hover,
+        .chip.active {
+            border-color: #0D9488;
+            color: #0D9488;
+        }
+
+        .chip.active {
+            background-color: #F0FDFA;
+        }
+
+        .chip-large {
+            padding: 1.5rem;
+            background-color: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 1rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .chip-large:hover {
+            border-color: #0D9488;
+            color: #0D9488;
+        }
+    </style>
+
+    <script>
+        let profile = { goal: '', height: '', weight: '', age: '', sex: '', activity: '', diet: '' };
+
+        function setMetric(key, val) {
+            profile[key] = val;
+            event.target.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function pick(key, val) {
+            profile[key] = val;
+            if (key === 'goal') next('stepGoal', 'stepMetrics');
+            if (key === 'diet') generatePlan();
+        }
+
+        function next(curr, nextId) {
+            document.getElementById(curr).classList.add('hidden');
+            document.getElementById(nextId).classList.remove('hidden');
+        }
+
+        async function generatePlan() {
+            // Reset UI for generation/retry
+            document.getElementById('stepDiet').classList.add('hidden');
+            document.getElementById('stepGenerating').classList.remove('hidden');
+            document.getElementById('genLoader').classList.remove('hidden');
+            document.getElementById('genError').classList.add('hidden');
+            document.getElementById('retryBtn').classList.add('hidden');
+            document.getElementById('backToStart').classList.add('hidden');
+            document.getElementById('genText').innerText = "AI Health Matrix Generating...";
+
+            try {
+                const res = await fetch('/api/generate-health-plan', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ profile })
+                });
+                if (!res.ok) throw new Error("HTTP " + res.status);
+                const data = await res.json();
+
+                document.getElementById('nutriStrategy').innerText = data.nutrition.strategy;
+                document.getElementById('nutriFoods').innerHTML = data.nutrition.key_foods.map(f => `<li class="text-xs flex items-center gap-2"><svg width="10" height="10" fill="#0D9488" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> ${f}</li>`).join('');
+
+                document.getElementById('workoutList').innerHTML = data.workout.weekly_routine.map(w => `
+                    <div class="flex gap-4 items-start">
+                        <div class="text-[10px] font-bold text-primary bg-teal-50 px-2 py-1 rounded">${w.day}</div>
+                        <div class="text-sm text-slate-700">${w.activity}</div>
+                    </div>
+                `).join('');
+
+                next('stepGenerating', 'stepResult');
+            } catch (err) {
+                console.error(err);
+                document.getElementById('genLoader').classList.add('hidden');
+                document.getElementById('genError').classList.remove('hidden');
+                document.getElementById('genText').innerText = "Clinical Matrix Interrupted";
+                document.getElementById('genSubText').innerText = "Unable to connect to the AI diagnostic server. Please ensure the backend is active on port 3001.";
+                document.getElementById('retryBtn').classList.remove('hidden');
+                document.getElementById('backToStart').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>

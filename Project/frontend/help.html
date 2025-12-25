@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center — SympCheck AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D9488',
+                        slate: { 800: '#1E293B', 900: '#0F172A' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-clinical min-h-screen flex flex-col">
+
+    <!-- NAV -->
+    <nav class="app-nav">
+        <div class="nav-container">
+            <a href="index.html" class="flex items-center gap-2 no-underline text-primary font-bold text-lg">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="#0D9488" />
+                    <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+                <span>SympCheck</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link-item">Home</a>
+                <a href="chatbot.html" class="product-btn btn-primary-product !py-2">Start Chat</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-24"></div>
+
+    <!-- HEADER -->
+    <header class="py-16 bg-white border-b border-slate-100">
+        <div class="container-product max-w-3xl text-center">
+            <span class="clinical-tag text-teal-600">Documentation</span>
+            <h1 class="text-4xl mb-4 text-slate-900">FAQ & Resources</h1>
+            <p class="text-lg text-slate-500">Understanding how to use the AI assessment tool effectively and safely.
+            </p>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="section-clinical flex-1">
+        <div class="container-product max-w-3xl">
+            <div class="flex flex-col gap-4">
+
+                <!-- FAQ Item (Native CSS + Tailwind layout) -->
+                <details class="medical-card group open:border-primary transition-all cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+                        How accurate is the AI assessment?
+                        <svg class="group-open:rotate-180 transition-transform" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4">
+                        SympCheck leverages late-stage large language models calibrated against clinical datasets. While
+                        highly effective at identifying triage levels, it is not a diagnostic tool. Always consult a
+                        physician for official medical decisions.
+                    </div>
+                </details>
+
+                <details class="medical-card group open:border-primary transition-all cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+                        What should I do in an emergency?
+                        <svg class="group-open:rotate-180 transition-transform" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4">
+                        If our AI flags your situation as "EMERGENCY," you should bypass digital tools and immediately
+                        contact your local emergency response service (911/112).
+                    </div>
+                </details>
+
+                <details class="medical-card group open:border-primary transition-all cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+                        Is my data HIPAA compliant?
+                        <svg class="group-open:rotate-180 transition-transform" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-sm text-slate-500 leading-relaxed border-t border-slate-100 pt-4">
+                        While this is a public informational tool, we apply HIPAA-grade privacy principles, including
+                        end-to-end encryption and zero-retention policies for identifiable health data.
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="product-footer mt-auto">
+        <div class="container-product text-center text-xs">
+            &copy; 2024 SymptomCheck. Clear Guidance.
+        </div>
+    </footer>
+
+</body>
+
+</html>

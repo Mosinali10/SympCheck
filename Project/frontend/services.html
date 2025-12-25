@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Specialties — SympCheck AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D9488',
+                        slate: { 800: '#1E293B', 900: '#0F172A' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-clinical">
+
+    <!-- NAV -->
+    <nav class="app-nav">
+        <div class="nav-container">
+            <a href="index.html" class="flex items-center gap-2 no-underline text-primary font-bold text-lg">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="#0D9488" />
+                    <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+                <span>SympCheck</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link-item">Home</a>
+                <a href="services.html" class="nav-link-item active">Services</a>
+                <a href="health-news.html" class="nav-link-item">News</a>
+                <a href="health-planner.html" class="nav-link-item">Planner</a>
+                <a href="chatbot.html" class="product-btn btn-primary-product !py-2">Start Chat</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-24"></div>
+
+    <!-- HEADER -->
+    <header class="py-16 bg-white border-b border-slate-100">
+        <div class="container-product text-center">
+            <span class="clinical-tag">Continuity of Care</span>
+            <h1 class="text-4xl mb-4">Medical Specialties</h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto">Discover specialist care pathways based on your AI
+                assessment results. We help bridge the gap between AI triage and clinical consultation.</p>
+        </div>
+    </header>
+
+    <!-- SPECIALTY GRID -->
+    <section class="section-clinical">
+        <div class="container-product">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card Component -->
+                <div class="medical-card group">
+                    <div
+                        class="w-12 h-12 bg-teal-50 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3">General Practice</h3>
+                    <p class="text-sm text-slate-500 mb-8">Primary care physicians for comprehensive health management
+                        and initial diagnostic coordination.</p>
+                    <a href="https://www.google.com/maps/search/General+Practitioners/" target="_blank"
+                        class="flex items-center gap-2 text-primary font-bold text-sm hover:translate-x-1 transition-transform">
+                        Explore Local Providers
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="medical-card group">
+                    <div
+                        class="w-12 h-12 bg-teal-50 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3">Cardiology</h3>
+                    <p class="text-sm text-slate-500 mb-8">Specialists focused on cardiovascular health, hypertension
+                        management, and heart condition diagnostics.</p>
+                    <a href="https://www.google.com/maps/search/Cardiologists/" target="_blank"
+                        class="flex items-center gap-2 text-primary font-bold text-sm hover:translate-x-1 transition-transform">
+                        Explore Local Providers
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="medical-card group">
+                    <div
+                        class="w-12 h-12 bg-teal-50 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3">Internal Medicine</h3>
+                    <p class="text-sm text-slate-500 mb-8">Experts in adult medicine, managing complex multi-system
+                        conditions and chronic diseases.</p>
+                    <a href="https://www.google.com/maps/search/Internal+Medicine/" target="_blank"
+                        class="flex items-center gap-2 text-primary font-bold text-sm hover:translate-x-1 transition-transform">
+                        Explore Local Providers
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="medical-card group">
+                    <div
+                        class="w-12 h-12 bg-teal-50 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3">Pediatrics</h3>
+                    <p class="text-sm text-slate-500 mb-8">Dedicated medical care for infants, children, and
+                        adolescents, including wellness checks.</p>
+                    <a href="https://www.google.com/maps/search/Pediatricians/" target="_blank"
+                        class="flex items-center gap-2 text-primary font-bold text-sm hover:translate-x-1 transition-transform">
+                        Explore Local Providers
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="medical-card group">
+                    <div
+                        class="w-12 h-12 bg-teal-50 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1 0-4.88 2.5 2.5 0 0 1 0-4.88A2.5 2.5 0 0 1 9.5 2Z" />
+                            <path
+                                d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 0-4.88 2.5 2.5 0 0 0 0-4.88A2.5 2.5 0 0 0 14.5 2Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3">Neurology</h3>
+                    <p class="text-sm text-slate-500 mb-8">Specialists in the nervous system, addressing brain, spinal
+                        cord, and peripheral nerve disorders.</p>
+                    <a href="https://www.google.com/maps/search/Neurologists/" target="_blank"
+                        class="flex items-center gap-2 text-primary font-bold text-sm hover:translate-x-1 transition-transform">
+                        Explore Local Providers
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="medical-card group">
+                    <div
+                        class="w-12 h-12 bg-teal-50 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20 7h-7l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-3">Health Records</h3>
+                    <p class="text-sm text-slate-500 mb-8">Manage and coordinate your medical history for more informed
+                        diagnostic consultations.</p>
+                    <a href="chatbot.html"
+                        class="flex items-center gap-2 text-primary font-bold text-sm hover:translate-x-1 transition-transform">
+                        Start Digital Checkup
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="product-footer mt-auto">
+        <div class="container-product text-center text-xs">
+            &copy; 2024 SymptomCheck. For professional informational guidance only.
+        </div>
+    </footer>
+
+</body>
+
+</html>

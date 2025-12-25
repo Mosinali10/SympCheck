@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Guide — SympCheck AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D9488',
+                        slate: { 800: '#1E293B', 900: '#0F172A' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-clinical min-h-screen flex flex-col">
+
+    <!-- NAV -->
+    <nav class="app-nav">
+        <div class="nav-container">
+            <a href="index.html" class="flex items-center gap-2 no-underline text-primary font-bold text-lg">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="#0D9488" />
+                    <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+                <span>SympCheck</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link-item">Home</a>
+                <a href="chatbot.html" class="product-btn btn-primary-product !py-2">Launch Tool</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-24"></div>
+
+    <!-- HEADER -->
+    <header class="py-16 bg-white border-b border-slate-100">
+        <div class="container-product max-w-3xl text-center">
+            <span class="clinical-tag text-teal-600">User Guide</span>
+            <h1 class="text-4xl mb-4 text-slate-900">Using the Assessment Tool</h1>
+            <p class="text-lg text-slate-500">A clear framework for interacting with our AI engine to get the most
+                accurate triage guidance.</p>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="section-clinical flex-1">
+        <div class="container-product max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-12">
+                    <div class="flex gap-6">
+                        <div
+                            class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold shrink-0">
+                            1</div>
+                        <div>
+                            <h3 class="text-lg mb-2 font-bold">Input Symptom Profile</h3>
+                            <p class="text-sm text-slate-500">Provide an objective description. Mention onset, location,
+                                and pain intensity from 1-10.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div
+                            class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold shrink-0">
+                            2</div>
+                        <div>
+                            <h3 class="text-lg mb-2 font-bold">AI Interaction</h3>
+                            <p class="text-sm text-slate-500">Answer clarifying questions from the assistant. This
+                                allows for precision pattern matching.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div
+                            class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold shrink-0">
+                            3</div>
+                        <div>
+                            <h3 class="text-lg mb-2 font-bold">Review Triage Level</h3>
+                            <p class="text-sm text-slate-500">Examine the resulting assessment (Emergency, Urgent,
+                                Routine, or Self-Care).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-2 rounded-3xl shadow-2xl border border-slate-100 overflow-hidden relative">
+                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/medical-chat-illustration-download-in-svg-png-gif-file-formats--health-bot-online-doctor-consultation-healthcare-pack-illustrations-5211910.png"
+                        alt="Interaction Guide" class="w-full h-auto rounded-2xl">
+                </div>
+            </div>
+
+            <div class="mt-20 text-center">
+                <a href="chatbot.html" class="product-btn btn-primary-product px-12 py-4 text-lg">Enter Digital
+                    Clinic</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="product-footer mt-auto">
+        <div class="container-product text-center text-xs">
+            &copy; 2024 SymptomCheck. Clear Framework.
+        </div>
+    </footer>
+
+</body>
+
+</html>

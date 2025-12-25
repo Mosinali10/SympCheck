@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — SympCheck AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D9488',
+                        slate: { 800: '#1E293B', 900: '#0F172A' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-clinical min-h-screen flex flex-col">
+
+    <!-- NAV -->
+    <nav class="app-nav">
+        <div class="nav-container">
+            <a href="index.html" class="flex items-center gap-2 no-underline text-primary font-bold text-lg">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="#0D9488" />
+                    <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+                <span>SympCheck</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link-item">Home</a>
+                <a href="services.html" class="nav-link-item">Services</a>
+                <a href="chatbot.html" class="product-btn btn-primary-product !py-2">Start Chat</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-24"></div>
+
+    <!-- HEADER -->
+    <header class="py-16 bg-white border-b border-slate-100">
+        <div class="container-product max-w-3xl">
+            <span class="clinical-tag text-teal-600">Trust & Transparency</span>
+            <h1 class="text-4xl mb-4 text-slate-900">Privacy Policy</h1>
+            <p class="text-lg text-slate-500">How we protect your personal health data through encryption and strict
+                data minimization protocols.</p>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="section-clinical flex-1">
+        <div class="container-product max-w-3xl">
+            <article class="medical-card leading-relaxed text-slate-600 space-y-8">
+                <section>
+                    <h3 class="text-slate-900 mb-4 font-bold">Data Encryption</h3>
+                    <p>All symptom assessments are encrypted in transit using industry-standard TLS 1.3. We do not store
+                        identifiable health records longer than necessary to provide the triage results.</p>
+                </section>
+                <section>
+                    <h3 class="text-slate-900 mb-4 font-bold">Anonymized Analysis</h3>
+                    <p>When you interact with our AI, your symptoms are processed anoymously. We do not link your
+                        genetic or identifiable personal data to clinical queries.</p>
+                </section>
+                <section>
+                    <h3 class="text-slate-900 mb-4 font-bold">Third-Party Policy</h3>
+                    <p>We do not sell data to pharmaceutical or insurance entities. Our partnership with Google Gemini
+                        is strictly for computational reasoning purposes.</p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="product-footer mt-auto">
+        <div class="container-product text-center text-xs">
+            &copy; 2024 SymptomCheck. Certified Privacy Protocols.
+        </div>
+    </footer>
+
+</body>
+
+</html>

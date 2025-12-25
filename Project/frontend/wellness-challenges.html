@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Journey — SympCheck AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D9488',
+                        slate: { 800: '#1E293B', 900: '#0F172A' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-clinical min-h-screen flex flex-col">
+
+    <!-- NAV -->
+    <nav class="app-nav">
+        <div class="nav-container">
+            <a href="index.html" class="flex items-center gap-2 no-underline text-primary font-bold text-lg">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="#0D9488" />
+                    <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+                <span>SympCheck</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link-item">Home</a>
+                <a href="services.html" class="nav-link-item">Services</a>
+                <a href="wellness-challenges.html" class="nav-link-item active">Wellness</a>
+                <a href="chatbot.html" class="product-btn btn-primary-product !py-2">Start Chat</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-24"></div>
+
+    <!-- HEADER -->
+    <header class="py-16 bg-white border-b border-slate-100">
+        <div class="container-product text-center">
+            <span class="clinical-tag text-teal-600">Proactive Health</span>
+            <h1 class="text-4xl mb-4 text-slate-900">Wellness Challenges</h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto">Build sustainable health habits with evidence-based
+                wellness tracks. Personalized recommendations based on your unique health profile.</p>
+        </div>
+    </header>
+
+    <!-- CHALLENGES GRID -->
+    <main class="section-clinical flex-1">
+        <div class="container-product lg:max-w-5xl">
+            <div id="wellness-challenges-list" class="grid md:grid-cols-2 gap-8">
+
+                <!-- Challenge Card -->
+                <div class="medical-card group border-l-4 border-l-primary hover:bg-slate-50 transition-colors">
+                    <div class="flex justify-between items-start mb-6">
+                        <span
+                            class="text-[10px] font-bold text-primary uppercase tracking-widest bg-teal-50 px-2 py-1 rounded">Physical
+                            Health</span>
+                        <span class="text-xs text-slate-400 font-medium">14 Days</span>
+                    </div>
+                    <h3 class="text-xl mb-3">Hydration Optimization</h3>
+                    <p class="text-sm text-slate-500 mb-8 leading-relaxed">Systematically improve your cellular
+                        hydration. Proper water intake supports cognitive function and metabolic efficiency.</p>
+                    <button class="product-btn btn-primary-product !py-2 px-6 w-full md:w-auto">Accept
+                        Challenge</button>
+                </div>
+
+                <div class="medical-card group border-l-4 border-l-primary hover:bg-slate-50 transition-colors">
+                    <div class="flex justify-between items-start mb-6">
+                        <span
+                            class="text-[10px] font-bold text-primary uppercase tracking-widest bg-teal-50 px-2 py-1 rounded">Mental
+                            Wellness</span>
+                        <span class="text-xs text-slate-400 font-medium">7 Days</span>
+                    </div>
+                    <h3 class="text-xl mb-3">Digital Detox Protocol</h3>
+                    <p class="text-sm text-slate-500 mb-8 leading-relaxed">Reduce cortisol levels by limiting
+                        non-essential screen time. Focus on restorative analog activities for neural recovery.</p>
+                    <button class="product-btn btn-primary-product !py-2 px-6 w-full md:w-auto">Accept
+                        Challenge</button>
+                </div>
+
+                <div class="medical-card group border-l-4 border-l-primary hover:bg-slate-50 transition-colors">
+                    <div class="flex justify-between items-start mb-6">
+                        <span
+                            class="text-[10px] font-bold text-primary uppercase tracking-widest bg-teal-50 px-2 py-1 rounded">Nutritional
+                            Care</span>
+                        <span class="text-xs text-slate-400 font-medium">21 Days</span>
+                    </div>
+                    <h3 class="text-xl mb-3">Whole Foods Integration</h3>
+                    <p class="text-sm text-slate-500 mb-8 leading-relaxed">Transition your diet toward nutrient-dense,
+                        unprocessed foods. Improve gut health and sustained energy levels.</p>
+                    <button class="product-btn btn-primary-product !py-2 px-6 w-full md:w-auto">Accept
+                        Challenge</button>
+                </div>
+
+                <div class="medical-card group border-l-4 border-l-primary hover:bg-slate-50 transition-colors">
+                    <div class="flex justify-between items-start mb-6">
+                        <span
+                            class="text-[10px] font-bold text-primary uppercase tracking-widest bg-teal-50 px-2 py-1 rounded">Recovery</span>
+                        <span class="text-xs text-slate-400 font-medium">10 Days</span>
+                    </div>
+                    <h3 class="text-xl mb-3">Sleep Hygiene Audit</h3>
+                    <p class="text-sm text-slate-500 mb-8 leading-relaxed">Optimize your circadian rhythm through
+                        controlled environment variables and a strict pre-sleep routine.</p>
+                    <button class="product-btn btn-primary-product !py-2 px-6 w-full md:w-auto">Accept
+                        Challenge</button>
+                </div>
+
+            </div>
+
+            <!-- PROMO -->
+            <div class="mt-20 p-12 bg-slate-900 text-white rounded-[2rem] text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-primary/10 blur-[100px]"></div>
+                <div class="relative z-10">
+                    <h3 class="text-3xl mb-4">Precision Wellness</h3>
+                    <p class="text-slate-400 max-w-2xl mx-auto mb-10">Not sure which track is right for you? Use our
+                        clinical chat tool to get a personalized recommendation based on your current health stats.</p>
+                    <a href="chatbot.html" class="product-btn btn-primary-product px-12 py-4">Determine My Path</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="product-footer mt-auto">
+        <div class="container-product text-center text-xs">
+            &copy; 2024 SymptomCheck. Evidence-based wellness methodologies.
+        </div>
+    </footer>
+
+</body>
+
+</html>

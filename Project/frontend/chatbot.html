@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symptom Assessment — SympCheck AI</title>
+
+  <!-- Critical Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Unified Clinical CSS -->
+  <link rel="stylesheet" href="index.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0D9488',
+            slate: { 800: '#1E293B', 900: '#0F172A' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .chat-container-max {
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .message-bubble {
+      max-width: 85%;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .message-user {
+      background: var(--primary);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    .message-bot {
+      background: #F1F5F9;
+      color: var(--slate-800);
+      align-self: flex-start;
+      border-bottom-left-radius: 0.25rem;
+      border: 1px solid #E2E8F0;
+    }
+
+    .typing-indicator span {
+      width: 6px;
+      height: 6px;
+      background: var(--slate-400);
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 1.4s infinite ease-in-out;
+    }
+
+    .typing-indicator span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .typing-indicator span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-clinical h-screen flex flex-col overflow-hidden">
+
+  <!-- MINIMAL NAV -->
+  <nav class="app-nav">
+    <div class="nav-container">
+      <a href="index.html" class="flex items-center gap-2 no-underline text-primary font-bold text-lg">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <rect width="24" height="24" rx="6" fill="#0D9488" />
+          <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+        <span>SympCheck</span>
+      </a>
+
+      <!-- Restored Navigation for better UX -->
+      <div class="flex items-center gap-6">
+        <div class="hidden md:flex items-center gap-6 mr-4">
+          <a href="index.html" class="nav-link-item">Home</a>
+          <a href="services.html" class="nav-link-item">Services</a>
+          <a href="health-news.html" class="nav-link-item">News</a>
+          <a href="health-planner.html" class="nav-link-item">Planner</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <span id="triageBadge" class="clinical-tag !mb-0 text-[10px] bg-slate-100 text-slate-500">Awaiting
+            Input</span>
+          <button id="newChatBtn" class="product-btn btn-outline-product !py-1 px-4 text-xs font-bold">Restart
+            Session</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CHAT INTERFACE -->
+  <main class="flex-1 overflow-hidden pt-24 pb-6 px-4">
+    <div class="chat-container-max flex flex-col h-full chat-window">
+
+      <!-- Chat Feed -->
+      <div id="chatMessages" class="flex-1 overflow-y-auto p-6 flex flex-col gap-6 scroll-smooth bg-white">
+        <!-- Clinical Onboarding -->
+        <div class="message-bubble message-bot">
+          <h5 class="font-bold text-primary mb-2">Welcome to SympCheck Assessment</h5>
+          <p class="mb-3">I'm your clinical AI assistant. Please describe your symptoms in as much detail as possible
+            (e.g., location, duration, and intensity of pain).</p>
+          <div class="p-3 bg-white rounded-lg border border-slate-100 text-xs text-slate-500 flex gap-3 italic">
+            <svg class="shrink-0 text-amber-500" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            This tool provides informational triage only. If this is a life-threatening emergency, please call 112/911
+            immediately.
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Anchor -->
+      <div class="p-6 bg-slate-50 border-t border-slate-100">
+        <div class="relative max-w-2xl mx-auto flex items-center gap-3">
+          <input id="chatInput" type="text" placeholder="Describe your symptoms..."
+            class="flex-1 py-4 px-6 rounded-2xl border-2 border-slate-200 outline-none focus:border-primary transition font-medium text-slate-700 bg-white shadow-sm">
+          <button id="sendBtn"
+            class="product-btn btn-primary-product p-4 rounded-2xl shadow-lg ring-offset-2 hover:ring-2 ring-primary">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+        </div>
+        <p class="text-center text-[10px] text-slate-400 mt-4 tracking-wider uppercase font-semibold">
+          Encrypted Session • Verified AI Reasoning
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS Logic (Preserved) -->
+  <script>
+    const API_URL = "/api/chat";
+    const messagesEl = document.getElementById("chatMessages");
+    const triageBadge = document.getElementById("triageBadge");
+    const inputEl = document.getElementById("chatInput");
+    const sendBtn = document.getElementById("sendBtn");
+    let history = [];
+
+    function addMsg(role, text) {
+      const msg = document.createElement("div");
+      msg.className = `message-bubble ${role === 'user' ? 'message-user' : 'message-bot'}`;
+      msg.innerHTML = text;
+      messagesEl.appendChild(msg);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function updateBadge(triage) {
+      if (!triage || !triage.triage_level) {
+        triageBadge.textContent = "Awaiting Input";
+        triageBadge.className = "clinical-tag !mb-0 text-[10px] bg-slate-100 text-slate-500";
+        return;
+      }
+      let t = triage.triage_level;
+      triageBadge.textContent = t.replace("_", " ").toUpperCase();
+
+      // Map colors to clinical levels
+      const colors = {
+        'emergency': 'bg-red-500 text-white',
+        'urgent': 'bg-amber-500 text-white',
+        'routine': 'bg-blue-500 text-white',
+        'self_care': 'bg-emerald-500 text-white'
+      };
+      triageBadge.className = `clinical-tag !mb-0 text-[10px] ${colors[t] || 'bg-primary text-white'}`;
+    }
+
+    async function sendMessage() {
+      const text = inputEl.value.trim();
+      if (!text) return;
+
+      addMsg("user", text);
+      history.push({ role: "user", content: text });
+      inputEl.value = "";
+
+      const typing = document.createElement("div");
+      typing.className = "message-bubble message-bot typing-indicator flex gap-1 items-center px-4 py-3";
+      typing.innerHTML = '<span></span><span></span><span></span>';
+      messagesEl.appendChild(typing);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ messages: history })
+        });
+        const data = await res.json();
+        typing.remove();
+        addMsg("bot", data.content);
+        history.push({ role: "assistant", content: data.content });
+        if (data.triage) updateBadge(data.triage);
+      } catch (err) {
+        typing.remove();
+        addMsg("bot", "Clinical connection issue. Please check your network and try again.");
+      }
+    }
+
+    sendBtn.onclick = sendMessage;
+    inputEl.onkeydown = (e) => { if (e.key === "Enter") sendMessage(); };
+    document.getElementById("newChatBtn").onclick = () => {
+      history = [];
+      messagesEl.innerHTML = `
+                <div class="message-bubble message-bot">
+                    Session restarted. Please describe your symptoms.
+                </div>
+            `;
+      updateBadge(null);
+    };
+  </script>
+</body>
+
+</html>

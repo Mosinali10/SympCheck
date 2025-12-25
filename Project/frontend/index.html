@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SympCheck — Intelligent Health Answers, Instantly.</title>
+
+    <!-- Critical Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Unified Clinical CSS -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Performance: Minimal Tailwind (only for layout utilities not yet in index.css) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D9488',
+                        slate: { 800: '#1E293B', 900: '#0F172A' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="app-nav">
+        <div class="nav-container">
+            <a href="index.html" class="flex items-center gap-2 no-underline text-primary font-bold text-xl">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="6" fill="#0D9488" />
+                    <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                </svg>
+                <span>SympCheck</span>
+            </a>
+            <div class="nav-links hidden md:flex">
+                <a href="index.html" class="nav-link-item active">Home</a>
+                <a href="services.html" class="nav-item-custom nav-link-item">Services</a>
+                <a href="health-news.html" class="nav-item-custom nav-link-item">News</a>
+                <a href="health-planner.html" class="nav-item-custom nav-link-item">Planner</a>
+                <a href="chatbot.html" class="product-btn btn-primary-product">Start Assessment</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-20"></div>
+
+    <!-- HERO: Clarity & Trust -->
+    <main>
+        <section class="section-clinical bg-white">
+            <div class="container-product">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="w-full lg:w-1/2">
+                        <span class="clinical-tag">Privacy-First AI Guidance</span>
+                        <h1 class="hero-title-main text-slate-900">
+                            Intelligent Health <br> Answers, <span class="text-primary italic">Instantly.</span>
+                        </h1>
+                        <p class="text-xl text-slate-600 mb-10 leading-relaxed">
+                            Navigate your symptoms with confidence. Our Gemini-powered AI provides accurate triage
+                            levels and clinical context to help you decide your next steps.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="chatbot.html" class="product-btn btn-primary-product text-lg px-10 py-4">
+                                Start Symptom Check
+                                <svg class="ml-2" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </a>
+                            <a href="health-planner.html" class="product-btn btn-outline-product text-lg px-8">Personal
+                                Health Planner</a>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 flex justify-center py-12">
+                        <div class="scanner-viewport">
+                            <!-- Soft Medical Wipe Glow -->
+                            <div class="scanner-beam"></div>
+
+                            <div class="anatomic-stack">
+                                <!-- BASE FRAME -->
+                                <img id="layerSkin" src="assets/human_body_medical_scan_silhouette_1766645037040.png"
+                                    class="anatomic-layer layer-skin base-idle" fetchpriority="high"
+                                    alt="Anatomic Base">
+
+                                <!-- INTERNAL SYNTHESIS -->
+                                <img id="revealLayer" src="assets/human_body_medical_scan_silhouette_1766645037040.png"
+                                    class="anatomic-layer layer-internal" alt="Internal Systems">
+
+                                <!-- CLINICAL NODES (Minimized) -->
+                                <div class="hotspot" style="top: 15%; left: 50%;">
+                                    <div class="hotspot-tag">Neurological Node</div>
+                                </div>
+                                <div class="hotspot" style="top: 35%; left: 52%;">
+                                    <div class="hotspot-tag">Cardiovascular Node</div>
+                                </div>
+                                <div class="hotspot" style="top: 58%; left: 50%;">
+                                    <div class="hotspot-tag">Abdominal Center</div>
+                                </div>
+                                <div class="hotspot" style="top: 82%; left: 47%;">
+                                    <div class="hotspot-tag">Structural Axis</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- TRUST: Why SympCheck -->
+        <section class="section-clinical border-y border-slate-100">
+            <div class="container-product">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div
+                            class="w-12 h-12 bg-teal-50 text-primary rounded-xl flex items-center justify-center mx-auto mb-6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg mb-2">Clinical Integrity</h3>
+                        <p class="text-slate-500 text-sm">Our AI logic is calibrated against evidence-based triage
+                            protocols to ensure safety.</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-12 h-12 bg-teal-50 text-primary rounded-xl flex items-center justify-center mx-auto mb-6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg mb-2">Encrypted Privacy</h3>
+                        <p class="text-slate-500 text-sm">Conversations are ephemeral and encrypted. We never sell your
+                            personal health data.</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-12 h-12 bg-teal-50 text-primary rounded-xl flex items-center justify-center mx-auto mb-6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg mb-2">24/7 Availability</h3>
+                        <p class="text-slate-500 text-sm">Instant guidance even at 3 AM. AI that never sleeps, so you
+                            can rest easier.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW: The Workflow -->
+        <section class="section-clinical bg-white">
+            <div class="container-product text-center mb-16">
+                <span class="clinical-tag">The Process</span>
+                <h2 class="text-3xl mb-4">How It Works</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="medical-card">
+                        <div class="text-primary font-bold text-2xl mb-4">01</div>
+                        <h4 class="mb-2">Describe</h4>
+                        <p class="text-slate-500 text-sm">Input your symptoms in plain language. AI handles the
+                            complexity.</p>
+                    </div>
+                    <div class="medical-card">
+                        <div class="text-primary font-bold text-2xl mb-4">02</div>
+                        <h4 class="mb-2">Analyze</h4>
+                        <p class="text-slate-500 text-sm">Advanced neural models process and cross-reference your input.
+                        </p>
+                    </div>
+                    <div class="medical-card">
+                        <div class="text-primary font-bold text-2xl mb-4">03</div>
+                        <h4 class="mb-2">Resolve</h4>
+                        <p class="text-slate-500 text-sm">Get clear triage levels and recommended wellness actions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section-clinical bg-slate-900 text-white rounded-[2rem] mx-4 mb-20 overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px]"></div>
+            <div class="container-product text-center relative z-10">
+                <h2 class="text-4xl mb-6">Ready for a Health Check?</h2>
+                <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+                    Take control of your health with instant, evidence-based AI insights. Secure, private, and free to
+                    use.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="chatbot.html" class="product-btn btn-primary-product px-12 py-4 text-lg">Start Chat Now</a>
+                    <a href="privacy.html" class="product-btn bg-white/10 text-white px-8 border border-white/20">Read
+                        Safety Policy</a>
+                </div>
+                <p class="mt-12 text-slate-500 text-xs italic opacity-70">
+                    *Triage results are for informational purposes and not a substitute for professional medical
+                    diagnosis.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="product-footer">
+        <div class="container-product flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-left">
+                <div class="flex items-center gap-2 text-primary font-bold text-lg mb-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect width="24" height="24" rx="6" fill="currentColor" />
+                        <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                    </svg>
+                    SympCheck
+                </div>
+                <p class="text-sm">Empowering wellness through intelligent technology.</p>
+            </div>
+            <div class="flex gap-12 text-sm">
+                <div class="flex flex-col gap-2">
+                    <span class="text-slate-200 font-bold mb-2">Product</span>
+                    <a href="chatbot.html" class="no-underline text-slate-400 hover:text-white transition">Chatbot</a>
+                    <a href="services.html" class="no-underline text-slate-400 hover:text-white transition">Services</a>
+                    <a href="health-news.html" class="no-underline text-slate-400 hover:text-white transition">News</a>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <span class="text-slate-200 font-bold mb-2">Legal</span>
+                    <a href="privacy.html" class="no-underline text-slate-400 hover:text-white transition">Privacy</a>
+                    <a href="help.html" class="no-underline text-slate-400 hover:text-white transition">Terms</a>
+                    <a href="contact-support.html"
+                        class="no-underline text-slate-400 hover:text-white transition">Support</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-product mt-12 pt-8 border-t border-slate-800 text-center text-xs">
+            &copy; 2024 SymptomCheck. Built for clinical excellence.
+        </div>
+    </footer>
+
+    <script>
+        const internalEl = document.getElementById('revealLayer');
+        const skinEl = document.getElementById('layerSkin');
+
+        // Internal Assets Stack
+        const systems = [
+            {
+                src: 'assets/human_body_medical_scan_silhouette_1766645037040.png',
+                class: 'layer-skeletal'
+            },
+            {
+                src: 'assets/human_nervous_system_premium.png',
+                class: 'layer-nerves'
+            },
+            {
+                src: 'assets/human_body_medical_scan_silhouette_1766645037040.png',
+                class: 'layer-muscular'
+            }
+        ];
+
+        let sysIdx = 0;
+
+        function cycleSystem() {
+            // Remove current medical classes
+            internalEl.classList.remove('layer-skeletal', 'layer-nerves', 'layer-muscular');
+
+            // Advance
+            sysIdx = (sysIdx + 1) % systems.length;
+            const current = systems[sysIdx];
+
+            // Update Asset and Class
+            internalEl.src = current.src;
+            internalEl.classList.add(current.class);
+
+            // Toggle skin frame transparency for focus
+            skinEl.classList.remove('base-idle');
+        }
+
+        // Cycle systems every time the 12s scan finishes
+        setInterval(cycleSystem, 12000);
+    </script>
+</body>
+
+</html>
