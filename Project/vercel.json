@@ -10,13 +10,8 @@
       "destination": "/frontend/index.html"
     },
     {
-      "source": "/(?!api/)(.*)",
+      "source": "/(.*)",
       "destination": "/frontend/$1"
     }
-  ],
-  "functions": {
-    "api/server.js": {
-      "runtime": "vercel-node@latest"
-    }
-  }
+  ]
 }
